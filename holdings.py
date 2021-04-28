@@ -17,6 +17,6 @@ df.to_csv('./XBI_holdings/'+dt_str+'xbi.csv')
 # Get inside files 
 # Get institutional fund flow
 # Look for options data source
-# Any epi data available?
+# Any epi data available? 
 # Check balance sheet on the company 
 # 
