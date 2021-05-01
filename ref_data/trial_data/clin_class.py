@@ -14,7 +14,7 @@ class ClinTrials:
         self.get_info = self.__get__info()
     
     @property
-    def __get_study_version(self):
+    def study_fields(self):
         fields_list = json_handler(
             f"{self._base_url}{self._info}study_fields_list?{self._json}"
         )
@@ -68,3 +68,4 @@ class ClinTrials:
 
             else:
                 raise ValueError("Format argument has to be either 'csv' or 'json'")
+        
