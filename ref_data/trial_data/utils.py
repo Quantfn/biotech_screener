@@ -1,6 +1,9 @@
 import pandas as pd 
 import requests 
 import re
+import io
+
+from requests.sessions import default_headers
 
 def request_ct(url):
     """Performs a get request that provides a (somewhat) useful error message."""
@@ -25,8 +28,9 @@ def csv_handler(url):
     response = request_ct(url)
     decoded_content = response.content.decode("utf-8")
 
-    split_by_blank = re.split(r"\n\s*\n", decoded_content)  # Extracts header info
-    cr = csv.reader(split_by_blank[1].splitlines(), delimiter=",")
-    records = list(cr)
+    # split_by_blank = re.split(r"\n\s*\n", decoded_content)
+    records = pd.read_csv(io.StringIO(decoded_content))  # Extracts header info
+    # cr = csv.reader(split_by_blank[1].splitlines(), delimiter=",")
+    # records = list(cr)
 
     return records

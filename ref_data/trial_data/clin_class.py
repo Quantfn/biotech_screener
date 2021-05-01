@@ -22,9 +22,9 @@ class ClinTrials:
 
     def __get__info(self):
 
-        data_vrs = json_handler(f"{self.base_url}{self.info}/data_vrs?{self.json_}")['DataVrs']
+        data_vrs = json_handler(f"{self._base_url}{self._info}/data_vrs?{self._json}")['DataVrs']
 
-        api_vrs = json_handler(f"{self.base_url}{self.info}/data_vrs?{self.json_}")['ApiVrs']
+        api_vrs = json_handler(f"{self._base_url}{self._info}/api_vrs?{self._json}")['APIVrs']
 
         return data_vrs, api_vrs
     
@@ -59,11 +59,11 @@ class ClinTrials:
             concat_fields = ",".join(fields)
             req = f"study_fields?expr={search_expr}&max_rnk={max_studies}&fields={concat_fields}"
             if fmt == "csv":
-                url = f"{self._BASE_URL}{self._QUERY}{req}&{self._CSV}"
+                url = f"{self._base_url}{self._query}{req}&{self._csv}"
                 return csv_handler(url)
 
             elif fmt == "json":
-                url = f"{self._BASE_URL}{self._QUERY}{req}&{self._JSON}"
+                url = f"{self._base_url}{self._query}{req}&{self._json}"
                 return json_handler(url)
 
             else:
