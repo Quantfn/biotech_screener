@@ -1,0 +1,19 @@
+Structuring the product 
+
+What do pharma companies want
+- Profits -> determine M&A candidates, look for repurposed drugs, market access 
+- Understand clinical trial failure rates in particular disease areas 
+- Get success rate by clinical trial researchers
+- Get lead researcher of each clinical trial
+- Get location of clinical trial researcher
+- Get failure rate by the endpoint for disease area 
+- Failure rate by MoA of the drug
+- 
+- Data source clinicaltrials.gov -> api?
+- Success by leaders of a clinical trial 
+- Predict number of prescriptions 
+
+Create a model based on epi data  
+- Epi data for each disease area  
+- Get % of pts on each line
+- Get % of pts on 
