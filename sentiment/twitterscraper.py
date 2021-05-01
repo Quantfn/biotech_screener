@@ -12,7 +12,7 @@ import re
 tweets_list2 = []
 
 # Using TwitterSearchScraper to scrape data and append tweets to list
-for i,tweet in enumerate(sntwitter.TwitterSearchScraper('$ONCT since:2021-01-01 until:2021-03-30').get_items()):
+for i,tweet in enumerate(sntwitter.TwitterSearchScraper('Dextenza since:2021-01-01 until:2021-03-30').get_items()):
     if i>500:
         break
     tweets_list2.append([tweet.date, tweet.id, tweet.content, tweet.user.username])
