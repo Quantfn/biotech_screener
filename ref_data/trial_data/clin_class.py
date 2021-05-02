@@ -1,6 +1,4 @@
-from ref_data.trial_data.utils import request_ct
 from utils import csv_handler, json_handler
-
 
 class ClinTrials:
     _base_url = "http://clinicaltrials.gov/api/"
@@ -28,6 +26,11 @@ class ClinTrials:
 
         return data_vrs, api_vrs
     
+
+    def get_all_data(self,search_expr,fields,fmt="csv"):
+        res = request_ct(f"{self._base_url}{self._query}full_studies?expr={self._query}")
+
+
     def get_study_fields(self, search_expr, fields, max_studies=50, fmt="csv"):
         """Returns study content for specified fields
         Retrieves information from the study fields endpoint, which acquires specified information
@@ -69,3 +72,4 @@ class ClinTrials:
             else:
                 raise ValueError("Format argument has to be either 'csv' or 'json'")
         
+
